@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.TangkotFragment"
-    android:background="@android:color/white">
+   >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_schooltangkot"
