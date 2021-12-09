@@ -15,4 +15,5 @@
     <string name="main_menubtmbar">Main Menu</string>
     <string name="favourite">favourite</string>
     <string name="search_hint">Cari Sekolah</string>
+    <string name="back">back</string>
 </resources>

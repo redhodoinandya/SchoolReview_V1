@@ -8,6 +8,7 @@ import android.os.Bundle
 
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,11 +24,6 @@ import java.util.*
 class SearchActivity : AppCompatActivity() {
 
 
-
-
-
-
-
     private lateinit var searchBinding: FragmentTangkotBinding
     val academyAdapter = searchAdapter()
 
@@ -38,7 +34,13 @@ class SearchActivity : AppCompatActivity() {
         setContentView(searchBinding.root)
         val qSearched=intent.getStringExtra("qSearched")
         searchnow(qSearched.toString())
+        val actionbar = supportActionBar
+        actionbar!!.title = "Search"
+
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater: MenuInflater =menuInflater
@@ -86,6 +88,28 @@ class SearchActivity : AppCompatActivity() {
 
 
         }
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                this.finish()
+                return true
+            }
+        }
+        return super.onContextItemSelected(item)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        android.R.id.home -> {
+
+            this.finish()
+            true
+        }
+        else -> {
+            true
+        }
+
     }
 
 
