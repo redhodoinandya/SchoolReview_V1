@@ -13,17 +13,7 @@
 
     </item>
 
-        <item
-            android:id="@+id/fav"
-            android:enabled="false"
-            android:icon="@drawable/heart"
-            android:title="@string/favourite"
-            app:showAsAction="always"
 
 
-            >
 
-        </item>
-
-
-    </menu>
+</menu>
