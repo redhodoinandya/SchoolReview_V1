@@ -12,11 +12,6 @@ import com.dicoding.schoolreview.R
 import com.dicoding.schoolreview.databinding.FragmentTangkotBinding
 import com.dicoding.schoolreview.databinding.FragmentTangselBinding
 import com.dicoding.schoolreview.utils.DataSchool
-import androidx.appcompat.app.AppCompatActivity
-import android.widget.Toast
-
-
-
 
 
 
@@ -24,18 +19,25 @@ import android.widget.Toast
 class TangselFragment : Fragment() {
     private lateinit var fragmentTangselBinding: FragmentTangselBinding
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         fragmentTangselBinding = FragmentTangselBinding.inflate(layoutInflater, container, false)
+
         return fragmentTangselBinding.root
 
 
 
-
     }
+
+
+
+
+
+
 
 
 
@@ -52,8 +54,9 @@ class TangselFragment : Fragment() {
             }
         }
 
-
     }
+
+
 
 
 }

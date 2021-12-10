@@ -2,6 +2,7 @@ package com.dicoding.schoolreview.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.dicoding.schoolreview.data.SchoolEntity
@@ -33,6 +34,10 @@ class DetailTangkotActivity : AppCompatActivity() {
                 populatemovies(viewmodel.getTangkot())
             }
         }
+        val actionbar = supportActionBar
+        actionbar!!.title = "Info"
+
+        actionbar.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun populatemovies(geCinema: SchoolEntity) {
@@ -40,6 +45,28 @@ class DetailTangkotActivity : AppCompatActivity() {
         detailContentTangkotBinnding.textJalan.text = geCinema.street
         detailContentTangkotBinnding.textNomer.text = geCinema.number
         Glide.with(this@DetailTangkotActivity).load(geCinema.imagePath).into(detailContentTangkotBinnding.imagePoster)
+
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                this.finish()
+                return true
+            }
+        }
+        return super.onContextItemSelected(item)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        android.R.id.home -> {
+
+            this.finish()
+            true
+        }
+        else -> {
+            true
+        }
 
     }
 }

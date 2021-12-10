@@ -7,9 +7,13 @@
     tools:context=".detail.DetailTangkotActivity">
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <include android:id="@+id/detail_content1" layout="@layout/content_detail_tangkot" />
     </androidx.core.widget.NestedScrollView>

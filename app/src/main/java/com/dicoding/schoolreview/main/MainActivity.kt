@@ -72,10 +72,15 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
     }
 
+//    internal fun onOpenMap(){
+//        supportFragmentManager.beginTransaction()
+//    }
 
 }

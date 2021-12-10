@@ -1,17 +1,39 @@
 package com.dicoding.schoolreview.detail
 
+import android.location.Address
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.dicoding.schoolreview.R
 import com.dicoding.schoolreview.data.SchoolEntity
 import com.dicoding.schoolreview.databinding.ActivityDetailTangselBinding
+import com.dicoding.schoolreview.databinding.ActivityMapsBinding
 import com.dicoding.schoolreview.databinding.ContentDetailTangselBinding
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.MapView
 
-class DetailTangselActivity : AppCompatActivity() {
+import android.view.View
+import java.lang.Exception
+import android.location.Geocoder
+import java.util.*
+
+
+class DetailTangselActivity : AppCompatActivity(), OnMapReadyCallback {
     companion object {
         const val EXTRA_TANGSEL = "extra_tangsel"
     }
+
+    private lateinit var mMap: GoogleMap
+    private val MAPVIEW_BUNDLE_KEY = "MapViewBundleKey"
+    private lateinit var mMapView: MapView
+
 
     private lateinit var detailContentTangselBinnding: ContentDetailTangselBinding
 
@@ -33,6 +55,26 @@ class DetailTangselActivity : AppCompatActivity() {
                 populatemovies(viewmodel.getTangsel())
             }
         }
+
+        val actionbar = supportActionBar
+        actionbar!!.title = "Info"
+
+        // *** IMPORTANT ***
+        // MapView requires that the Bundle you pass contain _ONLY_ MapView SDK
+        // objects or sub-Bundles.
+        // *** IMPORTANT ***
+        // MapView requires that the Bundle you pass contain _ONLY_ MapView SDK
+        // objects or sub-Bundles.
+        var mapViewBundle: Bundle? = null
+        if (savedInstanceState != null) {
+            mapViewBundle = savedInstanceState.getBundle(MAPVIEW_BUNDLE_KEY)
+        }
+        mMapView = detailContentTangselBinnding.userListMap
+        mMapView.onCreate(mapViewBundle)
+
+        mMapView.getMapAsync(this)
+
+        actionbar.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun populatemovies(geCinema: SchoolEntity) {
@@ -41,5 +83,107 @@ class DetailTangselActivity : AppCompatActivity() {
         detailContentTangselBinnding.textJalan.text = geCinema.street
         Glide.with(this@DetailTangselActivity).load(geCinema.imagePath).into(detailContentTangselBinnding.imagePoster)
 
+
     }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                this.finish()
+                return true
+            }
+        }
+        return super.onContextItemSelected(item)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        android.R.id.home -> {
+
+            this.finish()
+            true
+        }
+        else -> {
+            true
+        }
+
+    }
+
+
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        var mapViewBundle = outState.getBundle(MAPVIEW_BUNDLE_KEY)
+        if (mapViewBundle == null) {
+            mapViewBundle = Bundle()
+            outState.putBundle(MAPVIEW_BUNDLE_KEY, mapViewBundle)
+        }
+        mMapView.onSaveInstanceState(mapViewBundle)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mMapView.onResume()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        mMapView.onStart()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mMapView.onStop()
+    }
+
+
+
+
+    override fun onMapReady(map: GoogleMap) {
+        val geocoder = Geocoder(this, Locale.getDefault())
+
+
+
+        var geoResults: List<Address> = geocoder.getFromLocationName("SMA YUPPENTEK 1 TANGERANG", 1)
+
+
+        val addr: Address = geoResults[0]
+        map.addMarker(MarkerOptions().position(LatLng(addr.latitude, addr.longitude)).title("Marker"))
+
+
+
+
+
+    }
+
+
+
+    override fun onPause() {
+        mMapView.onPause()
+        super.onPause()
+    }
+
+    override fun onDestroy() {
+        mMapView.onDestroy()
+        super.onDestroy()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mMapView.onLowMemory()
+    }
+
+
+    fun geoLocate(view: View){
+        val geocoder = Geocoder(this, Locale.getDefault())
+
+
+
+        var geoResults: List<Address> = geocoder.getFromLocationName("SMA YUPPENTEK 1 TANGERANG", 1)
+
+
+        val addr: Address = geoResults[0]
+        mMap.addMarker(MarkerOptions().position(LatLng(addr.latitude, addr.longitude)).title("Marker"))
+    }
+
+
 }

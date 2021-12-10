@@ -8,12 +8,13 @@
     <string name="tangsel">SMA/SMK S TANGSEL</string>
     <string name="jalan">jalan</string>
     <string name="number">nomer</string>
-    <string name="Telepon">Telepon</string>
-    <string name="Alamat">Alamat</string>
+    <string name="Telepon">Telepon :</string>
+    <string name="Alamat">Alamat :</string>
     <string name="search">Search</string>
     <string name="searchbtmbar">Search</string>
     <string name="main_menubtmbar">Main Menu</string>
     <string name="favourite">favourite</string>
     <string name="search_hint">Cari Sekolah</string>
     <string name="back">back</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>
