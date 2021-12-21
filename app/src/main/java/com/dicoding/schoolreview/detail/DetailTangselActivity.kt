@@ -22,7 +22,10 @@ import com.google.android.gms.maps.MapView
 import android.view.View
 import java.lang.Exception
 import android.location.Geocoder
+import android.nfc.Tag
+import android.util.Log
 import java.util.*
+import kotlin.math.log
 
 
 class DetailTangselActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -33,7 +36,8 @@ class DetailTangselActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
     private val MAPVIEW_BUNDLE_KEY = "MapViewBundleKey"
     private lateinit var mMapView: MapView
-
+    private lateinit var geocoder: Geocoder
+   // val geocoder = Geocoder(this, Locale.getDefault())
 
     private lateinit var detailContentTangselBinnding: ContentDetailTangselBinding
 
@@ -46,6 +50,7 @@ class DetailTangselActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val viewmodel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[ViewModelDetailTangsel::class.java]
 
+        //val geocoder = Geocoder(this, Locale.getDefault())
         val extras = intent.extras
         val faktor = extras?.getString(EXTRA_TANGSEL)
         if (extras != null) {
@@ -73,6 +78,7 @@ class DetailTangselActivity : AppCompatActivity(), OnMapReadyCallback {
         mMapView.onCreate(mapViewBundle)
 
         mMapView.getMapAsync(this)
+        geocoder = Geocoder(this)
 
         actionbar.setDisplayHomeAsUpEnabled(true)
     }
@@ -139,16 +145,39 @@ class DetailTangselActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
     override fun onMapReady(map: GoogleMap) {
-        val geocoder = Geocoder(this, Locale.getDefault())
+
+
+        mMap = map
+
+        try {
+            var geoResults: List<Address> = geocoder.getFromLocationName( detailContentTangselBinnding.textName.text.toString(), 1)
+            val addr: Address = geoResults.get(0)
+
+           // map.addMarker(MarkerOptions().position(LatLng(addr.latitude, addr.longitude)).title("Marker"))
+            Log.d("TAG","onmapready : " + addr.toString())
+            Log.d("TAG","lang : " + addr.latitude.toString())
+            Log.d("TAG","long : " + addr.longitude.toString())
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(addr.latitude, addr.longitude), 16F))
+
+            val school = LatLng(addr.latitude, addr.longitude)
+            mMap.addMarker(MarkerOptions().position(school).title(detailContentTangselBinnding.textName.text.toString()))
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(school))
+
+        }
+        catch(e :Exception) {
+            e.printStackTrace()
+        }
 
 
 
-        var geoResults: List<Address> = geocoder.getFromLocationName("SMA YUPPENTEK 1 TANGERANG", 1)
 
 
-        val addr: Address = geoResults[0]
-        map.addMarker(MarkerOptions().position(LatLng(addr.latitude, addr.longitude)).title("Marker"))
 
+
+//get LatLong
+
+
+        //get LatLong
 
 
 
@@ -178,7 +207,7 @@ class DetailTangselActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
 
-        var geoResults: List<Address> = geocoder.getFromLocationName("SMA YUPPENTEK 1 TANGERANG", 1)
+        var geoResults: List<Address> = geocoder.getFromLocationName("london", 1)
 
 
         val addr: Address = geoResults[0]
