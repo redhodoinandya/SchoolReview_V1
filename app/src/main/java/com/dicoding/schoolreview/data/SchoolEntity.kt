@@ -4,5 +4,7 @@ data class SchoolEntity(
     var name: String,
     var number: String,
     var street: String,
-    var imagePath: String
+    var imagePath: String,
+    var fasilitas: String,
+    var biaya: String
 )

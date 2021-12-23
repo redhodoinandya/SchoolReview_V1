@@ -72,6 +72,8 @@ class DetailTangkotActivity : AppCompatActivity(), OnMapReadyCallback {
         detailContentTangkotBinnding.textJalan.text = geCinema.street
         detailContentTangkotBinnding.textNomer.text = geCinema.number
         Glide.with(this@DetailTangkotActivity).load(geCinema.imagePath).into(detailContentTangkotBinnding.imagePoster)
+        detailContentTangkotBinnding.textPrestasi.text = geCinema.fasilitas
+        detailContentTangkotBinnding.textBiayamasuk.text = geCinema.biaya
 
     }
 
