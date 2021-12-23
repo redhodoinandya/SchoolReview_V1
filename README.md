@@ -27,5 +27,9 @@ Team ID: CSD-167\
 <b>Details page</b>\
 <img src="https://cdn.discordapp.com/attachments/884097709206806588/923628892097482792/Screenshot_20211223-233806.jpg" width=20% height=20%>
 
+## How to Use
+Buka aplikasi, dan cari lah sekolah yang anda mau, jika itu yang anda inginkan, bukalah dan maka info alamat, lokasi, biaya dll pun akan terdisplay.
+anda dapat mencari secara langsung atau mencari dengan scrolling
+
 
 
