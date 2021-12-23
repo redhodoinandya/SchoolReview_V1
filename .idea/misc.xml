@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitPercobaan/filebaru/SchoolReview_V1/app/src/main/res/layout/activity_detail_tangkot.xml" value="0.1" />
+        <entry key="..\:/GitPercobaan/filebaru/SchoolReview_V1/app/src/main/res/layout/activity_detail_tangsel.xml" value="0.1" />
+        <entry key="..\:/GitPercobaan/filebaru/SchoolReview_V1/app/src/main/res/layout/content_detail_tangkot.xml" value="0.18" />
+        <entry key="..\:/GitPercobaan/filebaru/SchoolReview_V1/app/src/main/res/layout/content_detail_tangsel.xml" value="0.2" />
         <entry key="..\:/Users/ricky/AndroidStudioProjects/SchoolReview_V1/app/src/main/res/layout/activity_detail_tangkot.xml" value="0.25" />
         <entry key="..\:/Users/ricky/AndroidStudioProjects/SchoolReview_V1/app/src/main/res/layout/activity_detail_tangsel.xml" value="0.17" />
         <entry key="..\:/Users/ricky/AndroidStudioProjects/SchoolReview_V1/app/src/main/res/layout/activity_main.xml" value="0.25" />

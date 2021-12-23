@@ -17,4 +17,8 @@
     <string name="search_hint">Cari Sekolah</string>
     <string name="back">back</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="fasilitas">Fasilitas Utama :</string>
+    <string name="biaya">SPP/Bulan :</string>
+    <string name="fasilitas_sekolah">Fasilitas sekolah</string>
+    <string name="biaya_sekolah">biaya registrasi</string>
 </resources>

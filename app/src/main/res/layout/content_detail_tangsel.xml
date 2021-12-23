@@ -80,14 +80,13 @@
 
     <RelativeLayout
         android:id="@+id/map_container"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="16dp"
         android:layout_weight="50"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_nomer">
+        app:layout_constraintTop_toBottomOf="@+id/text_biayamasuk">
 
         <com.google.android.gms.maps.MapView
             android:id="@+id/user_list_map"
@@ -99,8 +98,53 @@
 
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/tv_prestasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/fasilitas"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_nomer" />
 
+    <TextView
+        android:id="@+id/tv_biayaregistrasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/biaya"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_prestasi" />
 
+    <TextView
+        android:id="@+id/text_prestasi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="start"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_prestasi"
+        app:layout_constraintTop_toBottomOf="@+id/text_nomer"
+        tools:text="@string/fasilitas_sekolah" />
+
+    <TextView
+        android:id="@+id/text_biayamasuk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_biayaregistrasi"
+        app:layout_constraintTop_toBottomOf="@+id/text_prestasi"
+        tools:text="@string/biaya_sekolah" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

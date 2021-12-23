@@ -88,7 +88,8 @@ class DetailTangselActivity : AppCompatActivity(), OnMapReadyCallback {
         detailContentTangselBinnding.textNomer.text = geCinema.number
         detailContentTangselBinnding.textJalan.text = geCinema.street
         Glide.with(this@DetailTangselActivity).load(geCinema.imagePath).into(detailContentTangselBinnding.imagePoster)
-
+        detailContentTangselBinnding.textPrestasi.text = geCinema.fasilitas
+        detailContentTangselBinnding.textBiayamasuk.text = geCinema.biaya
 
     }
 
