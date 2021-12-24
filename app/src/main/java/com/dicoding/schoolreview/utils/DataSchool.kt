@@ -152,7 +152,7 @@ object DataSchool {
                 "SMA PGRI 56 PGRI CIPUTAT",
                 "(021) 7409808",
                 "Jl. Pendidikan No.30, Ciputat, Kec. Ciputat, Kota Tangerang Selatan, Banten 15411",
-                //"http://www.smppgri1ciputat.sch.id/img/logo.png",
+                ////"http://www.smppgri1ciputat.sch.id/img/logo.png",
 
                 "https://pbs.twimg.com/profile_images/2217060170/PGRI_LOGO_KECIL_400x400.jpg",
                 "Kantin dan Perpustakaan AC",
