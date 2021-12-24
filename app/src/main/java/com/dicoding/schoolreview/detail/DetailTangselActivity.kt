@@ -158,6 +158,7 @@ class DetailTangselActivity : AppCompatActivity(), OnMapReadyCallback {
             Log.d("TAG","onmapready : " + addr.toString())
             Log.d("TAG","lang : " + addr.latitude.toString())
             Log.d("TAG","long : " + addr.longitude.toString())
+
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(addr.latitude, addr.longitude), 16F))
 
             val school = LatLng(addr.latitude, addr.longitude)

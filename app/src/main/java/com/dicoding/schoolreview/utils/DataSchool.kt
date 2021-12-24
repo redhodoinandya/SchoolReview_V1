@@ -11,7 +11,7 @@ object DataSchool {
                 "SMA YUPPENTEK 1 TANGERANG",
             "(021) 5531725",
             "Jl. Perintis Kemerdekaan I No.1, RT.007/RW.003, Babakan, Kec. Tangerang, Kota Tangerang, Banten 15118",
-            "http://3.bp.blogspot.com/-yBdjD4b6EJA/Vvdgyt5_ahI/AAAAAAAAAGs/qvOt9fneR6gYsGYmg04kzSP4tRVncnlhQ/s1600-r/yupp4.png",
+            "https://scontent.fcgk30-1.fna.fbcdn.net/v/t31.18172-8/1410825_1391791491064188_1707324015_o.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=mN64V723cpAAX8qE-AS&_nc_ht=scontent.fcgk30-1.fna&oh=00_AT9bowTEm34Sz7M1dwMn52ZYbRIVVMYGTgKmEzssYlqdcA&oe=61E9B036",
             "Ruang kelas AC dan 6 Laboratorium",
             "Rp. 600.000")
         )
@@ -38,7 +38,7 @@ object DataSchool {
                 "SMA YP KARYA KOTA TANGERANG",
                 "(021) 55718228",
                 "Jl. Kh. Hasim Ashari No.96, RT.003/RW.001, Buaran Indah, Kec. Cipondoh, Kota Tangerang, Banten 15119",
-                "http://storage.googleapis.com/s.mysch.id/picture/57459012logoypkaryacopy.png",
+                "https://scontent.fcgk30-1.fna.fbcdn.net/v/t1.18169-9/10441958_1541722636070484_1255740296549346538_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=RvujeH7OvI8AX-6eDYM&_nc_ht=scontent.fcgk30-1.fna&oh=00_AT84B20qzCjTGpWIlwqZ3aKJMERjHhw6PV8kBXil3EmEpQ&oe=61EB1B73",
                 "Perpustakaan dan mushola AC",
                 "Rp. 400.000")
         )
@@ -83,7 +83,7 @@ object DataSchool {
                 "SMK YUPPENTEK 1 TANGERANG",
                 "(021) 5524518",
                 "Jl. Veteran No.1, RT.002/RW.002, Babakan, Kec. Tangerang, Kota Tangerang, Banten 15118",
-                "http://3.bp.blogspot.com/-yBdjD4b6EJA/Vvdgyt5_ahI/AAAAAAAAAGs/qvOt9fneR6gYsGYmg04kzSP4tRVncnlhQ/s1600-r/yupp4.png",
+                "https://scontent.fcgk30-1.fna.fbcdn.net/v/t31.18172-8/1410825_1391791491064188_1707324015_o.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=mN64V723cpAAX8qE-AS&_nc_ht=scontent.fcgk30-1.fna&oh=00_AT9bowTEm34Sz7M1dwMn52ZYbRIVVMYGTgKmEzssYlqdcA&oe=61E9B036",
                 "Ruang praktikum dan Alat Praktikum lengkap",
                 "Rp. 500.000")
         )
@@ -152,7 +152,9 @@ object DataSchool {
                 "SMA PGRI 56 PGRI CIPUTAT",
                 "(021) 7409808",
                 "Jl. Pendidikan No.30, Ciputat, Kec. Ciputat, Kota Tangerang Selatan, Banten 15411",
-                "http://www.smppgri1ciputat.sch.id/img/logo.png",
+                //"http://www.smppgri1ciputat.sch.id/img/logo.png",
+
+                "https://pbs.twimg.com/profile_images/2217060170/PGRI_LOGO_KECIL_400x400.jpg",
                 "Kantin dan Perpustakaan AC",
                 "Rp. 550.000"
             )
